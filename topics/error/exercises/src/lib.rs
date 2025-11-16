@@ -4,9 +4,18 @@ pub enum MathError {
 }
 
 pub fn div(x: u32, y: u32) -> Result<u32, MathError> {
-    todo!();
+    //todo!();
+
+    if y == 0 {
+        Err(MathError::DivByZero)
+    } else {
+        Ok(x / y)
+    }
 }
 
 pub fn get(v: &[u32], i: usize, default_val: u32) -> u32 {
-    todo!();
+  match v.get(i) {
+    Some(x) => *x,
+    None => default_val,
+  }
 }
